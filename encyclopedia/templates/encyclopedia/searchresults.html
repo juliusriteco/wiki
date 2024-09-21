@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>All Pages</h1>
+
+    {% if message %}
+    <div style="color: red;">
+        <strong>{{ message }}</strong>
+    </div>
+    {% endif %}
+    <br>
+
+    <ul>
+        {% for option in options %}
+            <li><a href="{% url 'encyclopedia:page' option %}">{{ option }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

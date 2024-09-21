@@ -1,0 +1,27 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+
+    {% if title %}
+        <h1>{{title}}</h1>
+    {% endif %}
+
+    {% if content %}
+    <div>
+        {{content|safe}}
+    </div>
+    {% endif %}
+
+    {% if title %}
+            <a href="{% url 'encyclopedia:edit' title %}"> Edit </a>
+            
+    {% endif %}
+
+
+
+{% endblock %}
